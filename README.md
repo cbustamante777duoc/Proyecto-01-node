@@ -1,3 +1,3 @@
 ## proyecto 
 
-primeros pasos con node 
+primeros pasos con node y git
