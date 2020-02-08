@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cbustamante777duoc/Proyecto-01-node#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "yargs": "^15.1.0"
   },
   "devDependencies": {}

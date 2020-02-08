@@ -1,8 +1,9 @@
 // solo ocupo de la confi el argv
 //en ves de argv.argv.base 
 
-
 const argv = require('./config/yargs').argv;
+const colors = require('colors');
+
 
 
 const {crearArchivo, ListarTablas} = require('./multiplicar/multiplicar');
@@ -18,7 +19,7 @@ switch (comando) {
         break;
     case 'crear':
         crearArchivo(argv.base, argv.limite)
-            .then(archivo => console.log(`archivo creado ${archivo}`))
+            .then(archivo => console.log(`archivo creado ${archivo}`.inverse))
             .catch(e => console.log(e));
         break;
 
@@ -27,9 +28,6 @@ switch (comando) {
 }
 
 
-/*let parametro = argv[2];
-let dividir = parametro.split('=');
-let base = dividir[1];
-console.log(base);*/
+
 
 
