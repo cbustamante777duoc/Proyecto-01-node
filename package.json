@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-01-node",
+  "version": "1.0.0",
+  "description": "Primera aplicacion de node ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbustamante777duoc/Proyecto-01-node.git"
+  },
+  "author": "cristian bustamante",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbustamante777duoc/Proyecto-01-node/issues"
+  },
+  "homepage": "https://github.com/cbustamante777duoc/Proyecto-01-node#readme",
+  "dependencies": {
+    "yargs": "^15.1.0"
+  },
+  "devDependencies": {}
+}
