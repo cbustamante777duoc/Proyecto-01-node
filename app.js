@@ -12,19 +12,47 @@ const argv = require('yargs')
                         default:10
                     }
                 })
+                .command('crear','comando que permite crear tablas',{
+                    base:{
+                        //demand = obligatorio
+                        demand:true,
+                        // base = b
+                        alias: 'b'
+                    },
+                    limite:{
+                        alias:'l',
+                        //default = valor por defecto
+                        default:10
+                    }
+                })
                 .help()
                 .argv;
 
 
-const {crearArchivo} = require('./multiplicar/multiplicar');
+const {crearArchivo, ListarTablas} = require('./multiplicar/multiplicar');
 
 
 
 
 let argv2 = process.argv;
 
-//console.log(argv.base);
-console.log('limite', argv.limite);
+let comando = argv._[0];
+
+switch (comando) {
+    case 'listar':
+        ListarTablas(argv.base, argv.limite);
+        break;
+    case 'crear':
+        crearArchivo(argv.base, argv.limite)
+            .then(archivo => console.log(`archivo creado ${archivo}`))
+            .catch(e => console.log(e));
+        break;
+
+    default:
+        console.log('comando no reconocido');
+}
+
+//console.log('limite', argv.limite);
 //console.log(argv2);
 
 /*let parametro = argv[2];
@@ -33,8 +61,3 @@ let base = dividir[1];
 console.log(base);*/
 
 
-/*
-crearArchivo(base)
-    .then(archivo => console.log(`archivo creado ${archivo}`))
-    .catch(e => console.log(e));
-*/
