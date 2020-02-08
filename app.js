@@ -1,37 +1,11 @@
-const argv = require('yargs')
-                .command('listar','imprime en consola la tabla de multiplicar',{
-                    base:{
-                        //demand = obligatorio
-                        demand:true,
-                        // base = b
-                        alias: 'b'
-                    },
-                    limite:{
-                        alias:'l',
-                        //default = valor por defecto
-                        default:10
-                    }
-                })
-                .command('crear','comando que permite crear tablas',{
-                    base:{
-                        //demand = obligatorio
-                        demand:true,
-                        // base = b
-                        alias: 'b'
-                    },
-                    limite:{
-                        alias:'l',
-                        //default = valor por defecto
-                        default:10
-                    }
-                })
-                .help()
-                .argv;
+// solo ocupo de la confi el argv
+//en ves de argv.argv.base 
+
+
+const argv = require('./config/yargs').argv;
 
 
 const {crearArchivo, ListarTablas} = require('./multiplicar/multiplicar');
-
-
 
 
 let argv2 = process.argv;
@@ -52,8 +26,6 @@ switch (comando) {
         console.log('comando no reconocido');
 }
 
-//console.log('limite', argv.limite);
-//console.log(argv2);
 
 /*let parametro = argv[2];
 let dividir = parametro.split('=');
